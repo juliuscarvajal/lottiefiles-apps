@@ -6,6 +6,7 @@ import {
   IPlayerProps,
 } from '@lottiefiles/react-lottie-player';
 import { ComponentPropsWithRef } from 'react';
+import { DotLottiePlayer } from './DotLottiePlayer';
 
 type LottiePlayerProps = ComponentPropsWithRef<'div'> & {
   src: string;
@@ -15,6 +16,25 @@ type LottiePlayerProps = ComponentPropsWithRef<'div'> & {
   controlProps?: any; // NOTE: IControlProps is not exported;
 };
 
+const JSONLottiePlayer = ({
+  src,
+  showControls,
+  controlProps,
+  playerProps,
+}: LottiePlayerProps) => {
+  return (
+    <Player autoplay loop src={src} {...playerProps}>
+      {showControls && (
+        <Controls
+          visible
+          buttons={['play', 'repeat', 'frame', 'debug']}
+          {...controlProps}
+        />
+      )}
+    </Player>
+  );
+};
+
 export const LottiePlayer = ({
   src,
   showControls,
@@ -22,17 +42,21 @@ export const LottiePlayer = ({
   playerProps,
   ...rest
 }: LottiePlayerProps) => {
+  if (!src) {
+    return null;
+  }
   return (
     <div {...rest}>
-      <Player autoplay loop src={src} {...playerProps}>
-        {showControls && (
-          <Controls
-            visible
-            buttons={['play', 'repeat', 'frame', 'debug']}
-            {...controlProps}
-          />
-        )}
-      </Player>
+      {src.endsWith('.json') ? (
+        <JSONLottiePlayer
+          src={src}
+          showControls={showControls}
+          controlProps={controlProps}
+          playerProps={playerProps}
+        />
+      ) : (
+        <DotLottiePlayer src={src} />
+      )}
     </div>
   );
 };

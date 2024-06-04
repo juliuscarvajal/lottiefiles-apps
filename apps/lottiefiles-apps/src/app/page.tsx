@@ -8,15 +8,15 @@ export default function Index() {
       <div className="wrapper">
         <div className="p-4">
           <form
-            action={async (e: FormData) => {
-              'use server';
-              console.log(`>>> form`, e);
-              const res = await fetch(
-                'https://lottiefiles.com/api/search/get-animations?query=loading+dots&type=all&aep=false&sort=popular&page=1'
-              );
-              const data = await res.json();
-              console.log(`>>> data`, data?.data);
-            }}
+          // action={async (e: FormData) => {
+          //   'use server';
+          //   console.log(`>>> form`, e);
+          //   const res = await fetch(
+          //     'https://lottiefiles.com/api/search/get-animations?query=loading+dots&type=all&aep=false&sort=popular&page=1'
+          //   );
+          //   const data = await res.json();
+          //   console.log(`>>> data`, data?.data);
+          // }}
           >
             <Input
               type="search"
