@@ -9,16 +9,15 @@ const Nav = () => {
   return (
     <nav className="p-4 flex gap-2 shadow-xl sticky top-0 bg-white dark:bg-gray-900 z-10">
       <a href="/">Lottie Shop</a>
-      <a href="/animations">Animations</a>
     </nav>
   );
 };
 
-export default function RootLayout({
-  children,
-}: {
+type RootLayoutProps = {
   children: React.ReactNode;
-}) {
+};
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
       <body>

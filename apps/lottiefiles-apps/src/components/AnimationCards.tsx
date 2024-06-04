@@ -1,9 +1,8 @@
 'use client';
 
-import { useState } from 'react';
-import { Modal } from './Modal';
-import { LottiePlayer } from './LottiePlayer';
 import Image from 'next/image';
+import Link from 'next/link';
+import { LottiePlayer } from './LottiePlayer';
 
 type AnimationData = {
   node: {
@@ -11,6 +10,7 @@ type AnimationData = {
     name: string;
     imageUrl: string;
     lottieUrl: string;
+    jsonUrl: string;
   };
 };
 
@@ -19,40 +19,30 @@ type AnimationCardsProps = {
 };
 
 export const AnimationCards = ({ data }: AnimationCardsProps) => {
-  const [src, setSrc] = useState<string>();
   return (
     <>
       {data?.map((item) => {
         return (
-          <button
+          <Link
             key={item.node.id}
             className="p-2 bg-gray-700 rounded-xl"
-            onClick={() => setSrc(item.node.lottieUrl)}
+            href={`/animation/${item.node.id}?url=${item.node.jsonUrl}`}
           >
             <div className="p-2 bg-gray-700 rounded-xl">
               <h2>{item.node.name}</h2>
-              <div className="relative">
+              <LottiePlayer src={item.node.jsonUrl} />
+              {/* <div className="relative">
                 <Image
                   src={item.node.imageUrl}
                   alt={item.node.name}
                   width={300}
                   height={300}
                 />
-              </div>
+              </div> */}
             </div>
-          </button>
+          </Link>
         );
       })}
-      {src && (
-        <Modal
-          cta={{
-            label: 'Nice',
-          }}
-          onClose={() => setSrc(undefined)}
-        >
-          <LottiePlayer src={src} />
-        </Modal>
-      )}
     </>
   );
 };
