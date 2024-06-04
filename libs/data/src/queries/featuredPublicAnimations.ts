@@ -1,4 +1,5 @@
 import { gql } from 'urql';
+import { getClient } from '../framework/getClient';
 
 export const featuredPublicAnimationsQuery = gql`
   {
@@ -53,3 +54,19 @@ export const featuredPublicAnimationsQuery = gql`
     }
   }
 `;
+
+type AnimationData = {
+  node: {
+    id: string;
+    name: string;
+    imageUrl: string;
+    lottieUrl: string;
+    jsonUrl: string;
+  };
+};
+
+export async function getFeaturedPublicAnimations() {
+  const result = await getClient().query(featuredPublicAnimationsQuery, {});
+  const data = result?.data?.featuredPublicAnimations?.edges;
+  return data as Array<AnimationData>;
+}

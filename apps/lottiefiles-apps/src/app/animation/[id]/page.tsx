@@ -1,11 +1,5 @@
-import { LottiePlayerPage } from 'apps/lottiefiles-apps/src/components/LottiePlayerPage';
+import { LottiePlayerPage } from '@lottiefiles-apps/components';
 
-type DynamicPageIdProps = {
-  params: {
-    id: string;
-  };
-};
-
-export default function Page(props: DynamicPageIdProps) {
+export default function Page() {
   return <LottiePlayerPage />;
 }

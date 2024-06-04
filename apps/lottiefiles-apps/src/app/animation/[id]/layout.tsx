@@ -1,4 +1,4 @@
-import { BackNav } from 'apps/lottiefiles-apps/src/components/BackNav';
+import { BackNav } from '@lottiefiles-apps/components';
 
 type LayoutProps = {
   children: React.ReactNode;

@@ -22,10 +22,8 @@
 //      * https://github.com/LottieFiles/dotlottie-web/blob/main/packages/react/src/use-dotlottie.tsx
 //      *
 //      *  */
-//     if (dotLottie === undefined) {
-//       console.log(`>>> dotLottieRef`, dotLottieRef);
-//       setDotLottie(dotLottieRef);
-//     }
+//     console.log(`>>> dotLottieRef`, dotLottieRef);
+//     //   setDotLottie(dotLottieRef);
 //   };
 
 //   function play() {
