@@ -1,7 +1,10 @@
 //@ts-check
-
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { composePlugins, withNx } = require('@nx/next');
+const {
+  PHASE_DEVELOPMENT_SERVER,
+  PHASE_PRODUCTION_BUILD,
+} = require('next/constants');
 
 /**
  * @type {import('@nx/next/plugins/with-nx').WithNxOptions}
@@ -22,4 +25,17 @@ const plugins = [
   withNx,
 ];
 
-module.exports = composePlugins(...plugins)(nextConfig);
+/** @type {(phase: string, defaultConfig: import("next").NextConfig) => Promise<import("next").NextConfig>} */
+const nextConfigFn = async (phase) => {
+  const composedNextConfig = composePlugins(...plugins)(nextConfig);
+  if (phase === PHASE_DEVELOPMENT_SERVER || phase === PHASE_PRODUCTION_BUILD) {
+    const withSerwist = (await import('@serwist/next')).default({
+      swSrc: 'src/app/sw.ts',
+      swDest: 'public/sw.js',
+    });
+    return withSerwist(composedNextConfig);
+  }
+  return composedNextConfig;
+};
+
+module.exports = nextConfigFn;

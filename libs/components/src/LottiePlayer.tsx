@@ -26,6 +26,7 @@ const JSONLottiePlayer = ({
     <Player autoplay loop src={src} {...playerProps}>
       {showControls && (
         <Controls
+          transparentTheme
           visible
           buttons={['play', 'repeat', 'frame', 'debug']}
           {...controlProps}

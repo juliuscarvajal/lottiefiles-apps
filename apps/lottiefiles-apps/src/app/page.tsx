@@ -1,41 +1,28 @@
+import Link from 'next/link';
 import styles from './page.module.css';
-import { Button, Input } from '@headlessui/react';
-import { AnimationCards } from '@lottiefiles-apps/components';
+import { LottiePlayer } from '@lottiefiles-apps/components';
 
 export default function Index() {
   return (
     <div className={styles.page}>
-      <div className="wrapper">
-        <div className="p-4">
-          <form
-            action={async (e: FormData) => {
-              'use server';
-              console.log(`>>> form`, e);
-              const res = await fetch(
-                'https://lottiefiles.com/api/search/get-animations?query=loading+dots&type=all&aep=false&sort=popular&page=1'
-              );
-              const data = await res.json();
-              console.log(`>>> data`, data?.data);
-            }}
-          >
-            <div className="flex gap-2">
-              <Input
-                type="search"
-                name="search"
-                placeholder="Search animations"
-                className="dark:bg-gray-700 dark:text-white p-4 rounded-lg w-full"
-              />
-              <Button
-                type="submit"
-                className="bg-gray-900 px-4 py-2 rounded-lg"
-              >
-                Search
-              </Button>
-            </div>
-          </form>
+      <div className="wrapper py-4 md:py-24 flex flex-wrap md:grid md:grid-cols-2 items-center">
+        <div className="space-y-12">
+          <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
+            Find cool animations.
+            <br />
+            Works offline too...
+          </h1>
+          <div>
+            <Link
+              href="/free-animations"
+              className="bg-green-300 text-black text-lg px-8 py-4 rounded-lg"
+            >
+              See some animations
+            </Link>
+          </div>
         </div>
-        <div className="container grid grid-cols-3 gap-4 p-4">
-          <AnimationCards />
+        <div>
+          <LottiePlayer src="https://assets-v2.lottiefiles.com/a/9d361936-1b17-11ef-a120-3b9cdab96790/29cA9SZojU.json" />
         </div>
       </div>
     </div>
