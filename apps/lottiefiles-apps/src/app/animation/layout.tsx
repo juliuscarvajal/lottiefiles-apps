@@ -7,7 +7,9 @@ type LayoutProps = {
 export default function Layout({ children }: LayoutProps) {
   return (
     <>
-      <BackNav />
+      <nav className="w-full grid">
+        <BackNav className="justify-self-end" />
+      </nav>
       {children}
     </>
   );
