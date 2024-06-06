@@ -1,11 +1,19 @@
 'use client';
 
-import { useSearchParams } from 'next/navigation';
 import { LottiePlayer } from './LottiePlayer';
+import { useEffect, useState } from 'react';
+
+function useLocalStorage(key: string) {
+  const [value, setValue] = useState<string | null>(null);
+  useEffect(() => {
+    const itemValue = localStorage.getItem(key);
+    setValue(itemValue);
+  }, [key]);
+  return value;
+}
 
 export function LottiePlayerPage() {
-  const queryParams = useSearchParams();
-  const url = queryParams.get('url');
+  const url = useLocalStorage('currentAnimationUrl');
   if (!url) {
     return null;
   }
