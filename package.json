@@ -11,7 +11,8 @@
     "reset": "nx reset && rm -rf .nx && rm -rf apps/lottiefiles-apps/.next && npm i",
     "sst:dev": "sst bind npm run dev",
     "sst:build": "npm run build",
-    "sst:start": "npm run start"
+    "sst:start": "npm run start",
+    "deploy": "sst deploy --stage prod"
   },
   "private": true,
   "dependencies": {
