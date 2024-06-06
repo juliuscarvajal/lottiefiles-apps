@@ -8,7 +8,10 @@
     "start": "nx start lottiefiles-apps",
     "build": "nx build lottiefiles-apps",
     "show-projects": "nx show project lottiefiles-apps --web",
-    "reset": "nx reset && rm -rf .nx && rm -rf apps/lottiefiles-apps/.next && npm i"
+    "reset": "nx reset && rm -rf .nx && rm -rf apps/lottiefiles-apps/.next && npm i",
+    "sst:dev": "sst bind npm run dev",
+    "sst:build": "npm run build",
+    "sst:start": "npm run start"
   },
   "private": true,
   "dependencies": {
@@ -84,7 +87,8 @@
     "verdaccio": "^5.0.4",
     "vite": "~5.0.0",
     "vite-plugin-dts": "~3.8.1",
-    "vitest": "^1.3.1"
+    "vitest": "^1.3.1",
+    "sst": "^2.43.0"
   },
   "nx": {
     "includedScripts": []
