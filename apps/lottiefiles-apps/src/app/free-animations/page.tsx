@@ -25,7 +25,7 @@ export default function Page() {
             />
             <Button
               type="submit"
-              className="bg-green-300 text-black px-8 rounded-lg"
+              className="bg-primary text-primary px-8 rounded-lg"
             >
               Search
             </Button>

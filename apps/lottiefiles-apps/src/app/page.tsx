@@ -15,7 +15,7 @@ export default function Index() {
           <div>
             <Link
               href="/free-animations"
-              className="bg-green-300 text-black text-lg px-8 py-4 rounded-lg"
+              className="bg-primary text-primary text-lg px-8 py-4 rounded-lg"
             >
               See some animations
             </Link>

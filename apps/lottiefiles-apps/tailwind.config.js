@@ -15,6 +15,16 @@ module.exports = {
       gridTemplateColumns: {
         ['autofill']: 'repeat(auto-fill, minmax(192px, 1fr))',
       },
+      colors: {
+        primary: 'var(--color-primary)',
+        secondary: 'var(--color-secondary)',
+        tertiary: 'var(--color-tertiary)',
+      },
+      textColor: {
+        primary: 'black',
+        secondary: 'black',
+        tertiary: 'black',
+      },
     },
   },
   plugins: [require('@tailwindcss/typography')],

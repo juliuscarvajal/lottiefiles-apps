@@ -15,9 +15,6 @@ const nextConfig = {
     // See: https://github.com/gregberge/svgr
     svgr: false,
   },
-  images: {
-    domains: ['assets-v2.lottiefiles.com'],
-  },
 };
 
 const plugins = [

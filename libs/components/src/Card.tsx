@@ -1,4 +1,6 @@
-import { ComponentPropsWithRef } from 'react';
+import { ComponentPropsWithRef, forwardRef } from 'react';
+
+export type CardRef = HTMLDivElement;
 
 export type CardProps = ComponentPropsWithRef<'div'> & {
   header?: JSX.Element;
@@ -7,20 +9,18 @@ export type CardProps = ComponentPropsWithRef<'div'> & {
   footer?: JSX.Element;
 };
 
-export function Card({
-  header,
-  body,
-  description,
-  footer,
-  className = '',
-  ...rest
-}: CardProps) {
-  return (
-    <div className={`${className}`} {...rest}>
-      {header}
-      {body}
-      {description}
-      {footer}
-    </div>
-  );
-}
+export const Card = forwardRef<CardRef, CardProps>(
+  (
+    { header, body, description, footer, className = '', ...rest }: CardProps,
+    ref
+  ) => {
+    return (
+      <div ref={ref} className={`${className}`} {...rest}>
+        {header}
+        {body}
+        {description}
+        {footer}
+      </div>
+    );
+  }
+);

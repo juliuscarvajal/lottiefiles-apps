@@ -50,12 +50,15 @@ const Nav = () => {
   return (
     <nav className="text-xl px-4 md:px-8 py-4 md:py-8 flex gap-2 shadow-xl sticky top-0 bg-white dark:bg-gray-900 z-10">
       <a href="/" className="flex gap-4 items-center">
-        <Image
-          src="/icons/web/apple-touch-icon.png"
-          alt="Lottie Shop"
-          width={32}
-          height={32}
-        />
+        <div>
+          <Image
+            className="rounded-lg block"
+            src="/icons/web/apple-touch-icon.png"
+            alt="Lottie Shop"
+            width={32}
+            height={32}
+          />
+        </div>
         Lottie Shop
       </a>
     </nav>

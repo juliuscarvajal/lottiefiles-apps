@@ -7,7 +7,7 @@ export const BackNav = ({ className = '', ...rest }: ButtonProps) => {
   const router = useRouter();
   return (
     <Button
-      className={`bg-gray-200 dark:bg-gray-700 px-4 py-2 rounded-lg ${className}`}
+      className={`bg-primary text-primary px-8 py-4 rounded-lg ${className}`}
       onClick={() => router.back()}
       {...rest}
     >

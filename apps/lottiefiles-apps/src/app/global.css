@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --color-primary: #b7f77f;
+    --color-secondary: #7ff3f7;
+    --color-tertiary: #bf7ff7;
+  }
+}
+
 html {
   -webkit-text-size-adjust: 100%;
   font-family: Futura, 'Trebuchet MS', Helvetica Neue, ui-sans-serif, system-ui,

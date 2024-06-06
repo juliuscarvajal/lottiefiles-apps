@@ -6,11 +6,11 @@ type LayoutProps = {
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <>
-      <nav className="w-full grid">
-        <BackNav className="justify-self-end" />
-      </nav>
+    <div className="space-y-8">
       {children}
-    </>
+      <nav className="w-full flex justify-center">
+        <BackNav />
+      </nav>
+    </div>
   );
 }
