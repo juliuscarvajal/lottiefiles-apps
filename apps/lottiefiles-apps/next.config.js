@@ -28,14 +28,15 @@ const plugins = [
 /** @type {(phase: string, defaultConfig: import("next").NextConfig) => Promise<import("next").NextConfig>} */
 const nextConfigFn = async (phase) => {
   const composedNextConfig = composePlugins(...plugins)(nextConfig);
+  const config = await composedNextConfig(phase);
   if (phase === PHASE_DEVELOPMENT_SERVER || phase === PHASE_PRODUCTION_BUILD) {
     const withSerwist = (await import('@serwist/next')).default({
       swSrc: 'src/app/sw.ts',
       swDest: 'public/sw.js',
     });
-    return withSerwist(composedNextConfig);
+    return withSerwist(config);
   }
-  return composedNextConfig;
+  return config;
 };
 
 module.exports = nextConfigFn;
