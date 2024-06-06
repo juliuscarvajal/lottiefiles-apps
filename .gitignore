@@ -44,3 +44,16 @@ Thumbs.db
 .next
 out
 apps/lottiefiles-apps/public/sw.js
+
+# sst
+.sst
+.build
+
+# opennext
+.open-next
+
+# misc
+.DS_Store
+
+# local env files
+.env*.local
