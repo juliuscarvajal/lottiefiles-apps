@@ -49,7 +49,7 @@ export const viewport: Viewport = {
 
 const Nav = () => {
   return (
-    <nav className="px-4 md:px-8 py-4 md:py-8 shadow-xl sticky top-0 bg-white dark:bg-gray-900 z-10 flex items-center justify-between lg:justify-normal">
+    <nav className="px-4 md:px-8 py-4 md:py-8 shadow-xl sticky top-0 bg-white dark:bg-gray-900 z-10 flex items-center justify-between lg:justify-normal lg:gap-16">
       <Link href="/" className="flex gap-4 items-center text-xl font-bold">
         <div>
           <Image
