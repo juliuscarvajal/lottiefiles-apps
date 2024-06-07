@@ -14,7 +14,7 @@ export const AnimationCard = ({
   ...rest
 }: CardProps & { url: string }) => {
   return (
-    <Link href={`/animation?url=${url}`} shallow>
+    <Link href={`/animation?url=${url}`} shallow prefetch>
       <Card
         className={`rounded-xl flex flex-col justify-between h-full bg-gray-100 dark:bg-gray-700 hover:cursor-pointer ${className}`}
         header={

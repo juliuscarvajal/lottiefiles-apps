@@ -1,10 +1,11 @@
 import './global.css';
 import type { Metadata, Viewport } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const APP_NAME = 'Lottie Shop';
 const APP_DEFAULT_TITLE = 'Lottie Shop';
-const APP_TITLE_TEMPLATE = '%s - PWA App';
+const APP_TITLE_TEMPLATE = '%s - with offline support';
 const APP_DESCRIPTION = 'Find cool animations. Works offline too...';
 
 export const metadata: Metadata = {
@@ -48,19 +49,23 @@ export const viewport: Viewport = {
 
 const Nav = () => {
   return (
-    <nav className="text-xl px-4 md:px-8 py-4 md:py-8 flex gap-2 shadow-xl sticky top-0 bg-white dark:bg-gray-900 z-10">
-      <a href="/" className="flex gap-4 items-center">
+    <nav className="px-4 md:px-8 py-4 md:py-8 shadow-xl sticky top-0 bg-white dark:bg-gray-900 z-10 flex items-center justify-between lg:justify-normal">
+      <Link href="/" className="flex gap-4 items-center text-xl font-bold">
         <div>
           <Image
             className="rounded-lg block"
             src="/icons/web/apple-touch-icon.png"
             alt="Lottie Shop"
-            width={32}
-            height={32}
+            width={48}
+            height={48}
           />
         </div>
-        Lottie Shop
-      </a>
+        <span className="hidden sm:block">The Lottie Shop</span>
+      </Link>
+      <div className="flex gap-4 lg:gap-16 items-center font-bold">
+        <Link href="/free-animations">Free Animations</Link>
+        <Link href="/explore">Explore</Link>
+      </div>
     </nav>
   );
 };
