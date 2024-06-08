@@ -20,6 +20,7 @@ const serwist = new Serwist({
     cleanupOutdatedCaches: true,
     navigateFallback: '/offline',
     navigateFallbackAllowlist: [/\/animation/i],
+    ignoreURLParametersMatching: [/query/i],
   },
   skipWaiting: true,
   clientsClaim: true,

@@ -10,6 +10,12 @@
   }
 }
 
+@layer components {
+  .btn-primary {
+    background-color: var(--color-primary);
+  }
+}
+
 html {
   -webkit-text-size-adjust: 100%;
   font-family: Futura, 'Trebuchet MS', Helvetica Neue, ui-sans-serif, system-ui,
