@@ -65,6 +65,10 @@ const Nav = () => {
       <div className="flex gap-4 lg:gap-16 items-center font-bold">
         <Link href="/free-animations">Free Animations</Link>
         <Link href="/explore">Explore</Link>
+        {/* NOTE: This route only exist on animation click. Hiding it will still allow for prefetch and can make /animation?url=*** work offline */}
+        <Link href="/animation" className="w-0 h-0 overflow-hidden">
+          Animation
+        </Link>
       </div>
     </nav>
   );

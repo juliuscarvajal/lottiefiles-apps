@@ -1,9 +1,8 @@
 'use client';
-
 import {
-  Player,
   Controls,
   IPlayerProps,
+  Player,
 } from '@lottiefiles/react-lottie-player';
 import { ComponentPropsWithRef } from 'react';
 import { DotLottiePlayer } from './DotLottiePlayer';

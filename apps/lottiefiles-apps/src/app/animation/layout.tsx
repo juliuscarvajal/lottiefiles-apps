@@ -1,10 +1,7 @@
 import { BackNav } from '@lottiefiles-apps/components';
+import { ComponentPropsWithRef } from 'react';
 
-type LayoutProps = {
-  children: React.ReactNode;
-};
-
-export default function Layout({ children }: LayoutProps) {
+export default function Layout({ children }: ComponentPropsWithRef<'div'>) {
   return (
     <div className="space-y-8">
       {children}

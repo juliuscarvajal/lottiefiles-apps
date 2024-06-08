@@ -1,5 +1,4 @@
 'use client';
-
 import { useSearchParams } from 'next/navigation';
 import { LottiePlayer } from './LottiePlayer';
 

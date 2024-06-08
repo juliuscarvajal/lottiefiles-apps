@@ -1,8 +1,7 @@
 'use client';
-
 import { Button, Input } from '@headlessui/react';
 import { debounce } from 'lodash';
-import { useSearchParams, usePathname, useRouter } from 'next/navigation';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 export function SearchBar() {
   const searchParams = useSearchParams();

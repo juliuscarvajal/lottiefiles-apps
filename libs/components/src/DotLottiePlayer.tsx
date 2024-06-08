@@ -1,5 +1,4 @@
 'use client';
-
 import { DotLottie, DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { useState } from 'react';
 
