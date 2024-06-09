@@ -22,7 +22,7 @@ export default function Index() {
           </div>
         </div>
         <div>
-          <LottiePlayer src="https://assets-v2.lottiefiles.com/a/9d361936-1b17-11ef-a120-3b9cdab96790/29cA9SZojU.json" />
+          <LottiePlayer preview src="animations/29cA9SZojU.json" />
         </div>
       </div>
     </div>

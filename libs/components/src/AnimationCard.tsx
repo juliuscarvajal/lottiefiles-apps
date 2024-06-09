@@ -1,8 +1,8 @@
 'use client';
-
 import Link from 'next/link';
 import { Card, CardProps } from './Card';
-import { LottiePlayer } from './LottiePlayer';
+import { lazy } from 'react';
+const LottiePlayer = lazy(() => import('./LottiePlayer'));
 
 export const AnimationCard = ({
   className = '',
@@ -19,7 +19,11 @@ export const AnimationCard = ({
         className={`rounded-xl flex flex-col justify-between h-full bg-gray-100 dark:bg-gray-700 hover:cursor-pointer ${className}`}
         header={
           <div className="aspect-square grid items-center bg-gray-100 dark:bg-gray-700">
-            <LottiePlayer src={url} className="bg-gray-100 dark:bg-gray-700" />
+            <LottiePlayer
+              preview
+              src={url}
+              className="bg-gray-100 dark:bg-gray-700"
+            />
           </div>
         }
         body={body}

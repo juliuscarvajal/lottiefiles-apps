@@ -74,8 +74,9 @@ const Nav = () => {
   );
 };
 
-type RootLayoutProps = {
+export type RootLayoutProps = {
   children: React.ReactNode;
+  params?: Record<string, string>;
 };
 
 export default function RootLayout({ children }: RootLayoutProps) {
